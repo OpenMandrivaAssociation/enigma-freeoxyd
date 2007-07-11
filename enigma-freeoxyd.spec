@@ -43,17 +43,6 @@ rm -rf $RPM_BUILD_ROOT%{_includedir} $RPM_BUILD_ROOT%{_libdir}/*.a
 
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): \
-	command="%{_bindir}/%{name}" \
-	needs="x11" \
-	section="More Applications/Games/Arcade" \
-	title="Enigma" \
-	icon="%name.png" \
-	longtitle="Enigma is a puzzle game similar to Oxyd" \
-	startup_notify="false" xdg="true"
-EOF
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="PuzzleGame" \
@@ -89,7 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man6/*
 %_datadir/icons/hicolor/48x48/apps/*
 %_datadir/pixmaps/*
-%{_menudir}/*
 %_liconsdir/%name.png
 %_iconsdir/%name.png
 %_miconsdir/%name.png
