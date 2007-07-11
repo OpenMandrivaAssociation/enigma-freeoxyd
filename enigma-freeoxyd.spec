@@ -25,16 +25,14 @@ innumerable puzzles blocking your direct way to the Oxyd stones...
 %prep
 %setup -q -n enigma-%{version}
 %patch1 -p1
+
 %build
-
-./configure --prefix=%_prefix --libdir=%_libdir
-
+%configure2_5x
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT installed-docs
-
-make install prefix=$RPM_BUILD_ROOT%_prefix
+%makeinstall_std
 
 mkdir -p $RPM_BUILD_ROOT%_mandir/man6
 mv $RPM_BUILD_ROOT%_prefix/man/man6/* $RPM_BUILD_ROOT%_mandir/man6/
