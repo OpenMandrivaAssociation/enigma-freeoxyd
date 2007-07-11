@@ -4,7 +4,6 @@ Version: 1.01
 Release: %mkrel 1
 Source0:  http://download.berlios.de/enigma-game/enigma-%{version}.tar.bz2
 Patch1: enigma-0.81-desktop-entry.patch
-Patch2: enigma-0.92-gcc4.1.patch
 License: GPL
 Group: Games/Arcade
 URL: http://www.nongnu.org/enigma/
@@ -26,7 +25,6 @@ innumerable puzzles blocking your direct way to the Oxyd stones...
 %prep
 %setup -q -n enigma-%{version}
 %patch1 -p1
-%patch2 -p1
 %build
 
 ./configure --prefix=%_prefix --libdir=%_libdir
