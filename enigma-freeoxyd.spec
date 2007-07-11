@@ -38,6 +38,9 @@ rm -rf $RPM_BUILD_ROOT installed-docs
 mv $RPM_BUILD_ROOT/%_docdir/enigma installed-docs
 mv $RPM_BUILD_ROOT/%_bindir/enigma $RPM_BUILD_ROOT/%_bindir/%name
 
+# (blino) remove devel files
+rm -rf $RPM_BUILD_ROOT%{_includedir} $RPM_BUILD_ROOT%{_libdir}/*.a
+
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 
 cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
