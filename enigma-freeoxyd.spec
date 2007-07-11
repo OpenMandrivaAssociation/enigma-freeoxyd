@@ -13,6 +13,7 @@ BuildRequires: liblua-devel libSDL-devel libSDL_image-devel
 BuildRequires: libSDL_mixer-devel libSDL_ttf-devel
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
+BuildRequires: xerces-c-devel
 
 %description
 Enigma is a tribute to and a re-implementation of one of the most
