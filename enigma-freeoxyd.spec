@@ -1,8 +1,8 @@
 Summary: Enigma is a puzzle game similar to Oxyd
 Name: enigma-freeoxyd
-Version: 0.92
-Release: %mkrel 2
-Source0: http://savannah.nongnu.org/download/enigma/enigma-%{version}.tar.bz2
+Version: 1.01
+Release: %mkrel 1
+Source0:  http://download.berlios.de/enigma-game/enigma-%{version}.tar.bz2
 Patch1: enigma-0.81-desktop-entry.patch
 Patch2: enigma-0.92-gcc4.1.patch
 License: GPL
