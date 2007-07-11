@@ -35,10 +35,7 @@ innumerable puzzles blocking your direct way to the Oxyd stones...
 rm -rf $RPM_BUILD_ROOT installed-docs
 %makeinstall_std
 
-mkdir -p $RPM_BUILD_ROOT%_mandir/man6
-mv $RPM_BUILD_ROOT%_prefix/man/man6/* $RPM_BUILD_ROOT%_mandir/man6/
 mv $RPM_BUILD_ROOT/%_docdir/enigma installed-docs
-
 mv $RPM_BUILD_ROOT/%_bindir/enigma $RPM_BUILD_ROOT/%_bindir/%name
 
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
