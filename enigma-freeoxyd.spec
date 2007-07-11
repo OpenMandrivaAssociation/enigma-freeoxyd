@@ -41,8 +41,6 @@ mv $RPM_BUILD_ROOT/%_bindir/enigma $RPM_BUILD_ROOT/%_bindir/%name
 # (blino) remove devel files
 rm -rf $RPM_BUILD_ROOT%{_includedir} $RPM_BUILD_ROOT%{_libdir}/*.a
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="PuzzleGame" \
