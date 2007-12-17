@@ -7,7 +7,6 @@ Patch1: enigma-0.81-desktop-entry.patch
 License: GPL
 Group: Games/Arcade
 URL: http://www.nongnu.org/enigma/
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: libpng-devel
 BuildRequires: liblua-devel libSDL-devel libSDL_image-devel
 BuildRequires: libSDL_mixer-devel libSDL_ttf-devel
