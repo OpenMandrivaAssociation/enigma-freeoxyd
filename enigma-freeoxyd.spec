@@ -1,4 +1,4 @@
-Summary: Enigma is a puzzle game similar to Oxyd
+Summary: Puzzle game similar to Oxyd
 Name: enigma-freeoxyd
 Version: 1.01
 Release: %mkrel 1
