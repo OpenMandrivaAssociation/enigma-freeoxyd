@@ -1,7 +1,7 @@
 Summary: Puzzle game similar to Oxyd
 Name: enigma-freeoxyd
 Version: 1.01
-Release: %mkrel 2
+Release: %mkrel 4
 Source0: http://download.berlios.de/enigma-game/enigma-%{version}.tar.bz2
 Patch1: enigma-0.81-desktop-entry.patch
 License: GPL
