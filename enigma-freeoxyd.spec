@@ -11,7 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: libpng-devel
 BuildRequires: liblua-devel libSDL-devel libSDL_image-devel
 BuildRequires: libSDL_mixer-devel libSDL_ttf-devel
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildRequires: desktop-file-utils
 BuildRequires: xerces-c-devel
 
