@@ -1,19 +1,26 @@
-Summary: Puzzle game similar to Oxyd
-Name: enigma-freeoxyd
-Version: 1.01
-Release: %mkrel 4
-Source0: http://download.berlios.de/enigma-game/enigma-%{version}.tar.bz2
-Patch1: enigma-0.81-desktop-entry.patch
-License: GPL
-Group: Games/Arcade
-URL: http://www.nongnu.org/enigma/
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires: libpng-devel
-BuildRequires: liblua-devel libSDL-devel libSDL_image-devel
-BuildRequires: libSDL_mixer-devel libSDL_ttf-devel
-BuildRequires: imagemagick
-BuildRequires: desktop-file-utils
-BuildRequires: xerces-c-devel
+Summary:	Puzzle game similar to Oxyd
+Name:		enigma-freeoxyd
+Version:	1.01
+Release:	%mkrel 3
+Source0:	http://download.berlios.de/enigma-game/enigma-%{version}.tar.bz2
+Patch1:		enigma-0.81-desktop-entry.patch
+# Fix various GCC 4.3 build problems - AdamW 2008/12
+Patch2:		enigma-1.01-gcc43.patch
+# Fix some 'format not a string literal' errors - AdamW 2008/12
+Patch3:		enigma-1.01-literal.patch
+License:	GPLv2+
+Group:		Games/Arcade
+URL:		http://www.nongnu.org/enigma/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRequires:	libpng-devel
+BuildRequires:	liblua-devel
+BuildRequires:	libSDL-devel
+BuildRequires:	libSDL_image-devel
+BuildRequires:	libSDL_mixer-devel
+BuildRequires:	libSDL_ttf-devel
+BuildRequires:	imagemagick
+BuildRequires:	desktop-file-utils
+BuildRequires:	xerces-c-devel
 
 %description
 Enigma is a tribute to and a re-implementation of one of the most
@@ -26,38 +33,33 @@ innumerable puzzles blocking your direct way to the Oxyd stones...
 %prep
 %setup -q -n enigma-%{version}
 %patch1 -p1
+%patch2 -p1 -b .gcc43
+%patch3 -p1 -b .literal
 
 %build
 %configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT installed-docs
+rm -rf %{buildroot} installed-docs
 %makeinstall_std
 
-mv $RPM_BUILD_ROOT/%_docdir/enigma installed-docs
-mv $RPM_BUILD_ROOT/%_bindir/enigma $RPM_BUILD_ROOT/%_bindir/%name
+mv %{buildroot}/%_docdir/enigma installed-docs
+mv %{buildroot}/%{_bindir}/enigma %{buildroot}/%{_bindir}/%{name}
 
 # (blino) remove devel files
-rm -rf $RPM_BUILD_ROOT%{_includedir} $RPM_BUILD_ROOT%{_libdir}/*.a
+rm -rf %{buildroot}%{_includedir} %{buildroot}%{_libdir}/*.a
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="PuzzleGame" \
-  --add-category="X-MandrivaLinux-MoreApplications-Games-Arcade" \
   --add-category="ArcadeGame;LogicGame" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
-
-
-mkdir -p %buildroot{%_liconsdir,%_iconsdir,%_miconsdir}
-ln -s %_datadir/pixmaps/enigma.png %buildroot%_liconsdir/%name.png
-convert -scale 32x32 etc/enigma.png %buildroot%_iconsdir/%name.png
-convert -scale 16x16 etc/enigma.png %buildroot%_miconsdir/%name.png
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang enigma
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
@@ -78,9 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 %doc installed-docs/*
 %{_mandir}/man6/*
-%_datadir/icons/hicolor/48x48/apps/*
-%_datadir/pixmaps/*
-%_liconsdir/%name.png
-%_iconsdir/%name.png
-%_miconsdir/%name.png
+%{_datadir}/icons/hicolor/48x48/apps/*
+%{_datadir}/pixmaps/*
 
