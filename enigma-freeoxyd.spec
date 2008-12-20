@@ -13,7 +13,7 @@ Group:		Games/Arcade
 URL:		http://www.nongnu.org/enigma/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libpng-devel
-BuildRequires:	liblua-devel
+BuildRequires:	lua-devel
 BuildRequires:	libSDL-devel
 BuildRequires:	libSDL_image-devel
 BuildRequires:	libSDL_mixer-devel
