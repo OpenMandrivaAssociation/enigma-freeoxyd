@@ -1,0 +1,13 @@
+--- enigma-0.81/etc/enigma.desktop~	2003-07-10 09:56:11.000000000 +0200
++++ enigma-0.81/etc/enigma.desktop	2004-07-11 19:12:58.190967312 +0200
+@@ -9,8 +9,8 @@
+ Comment[eo]=Malkovru parojn de ŝtonojn dum vi navigas obstaklojn kun globeto
+ 
+ FilePattern=enigma;
+-TryExec=enigma
+-Exec=enigma
++TryExec=enigma-freeoxyd
++Exec=enigma-freeoxyd
+ Terminal=false
+ Icon=enigma
+ 

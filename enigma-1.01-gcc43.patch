@@ -1,0 +1,40 @@
+--- enigma-1.01/lib-src/enigma-core/ecl_util.hh	2006-01-20 03:12:12.000000000 -0800
++++ enigma-1.01/lib-src/enigma-core/ecl_util.hh.new	2008-12-20 12:29:26.000000000 -0800
+@@ -20,6 +20,7 @@
+ #define ECL_UTIL_HH_INCLUDED
+ 
+ #include <string>
++#include <algorithm>
+ 
+ /* hide GNU extensions for non-gnu compilers: */
+ #ifndef __GNU__
+--- enigma-1.01/src/file.hh	2007-04-03 16:12:49.000000000 -0700
++++ enigma-1.01/src/file.hh.new	2008-12-20 12:34:01.000000000 -0800
+@@ -22,6 +22,7 @@
+ #include <iosfwd>
+ #include <vector>
+ #include <list>
++#include <memory>
+ #include "ecl_error.hh"
+ 
+ namespace enigma
+--- enigma-1.01/src/Utf8ToXML.cc	2006-09-03 12:15:33.000000000 -0700
++++ enigma-1.01/src/Utf8ToXML.cc.new	2008-12-20 12:47:08.000000000 -0800
+@@ -17,6 +17,7 @@
+  *
+  */
+ 
++#include <cstring>
+ #include "Utf8ToXML.hh"
+ #include "main.hh"
+ #include <xercesc/util/XMLString.hpp>
+--- enigma-1.01/src/gui/widgets.cc	2007-05-18 06:14:14.000000000 -0700
++++ enigma-1.01/src/gui/widgets.cc.new	2008-12-20 14:54:36.000000000 -0800
+@@ -28,6 +28,7 @@
+ #include <cassert>
+ #include <algorithm>
+ #include <iostream>
++#include <climits>
+ 
+ using namespace enigma::gui;
+ using namespace ecl;
