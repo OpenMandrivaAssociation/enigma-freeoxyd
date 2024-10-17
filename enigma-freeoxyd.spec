@@ -10,7 +10,7 @@ Patch2:		enigma-1.01-gcc43.patch
 Patch3:		enigma-1.01-literal.patch
 License:	GPLv2+
 Group:		Games/Arcade
-URL:		http://www.nongnu.org/enigma/
+URL:		https://www.nongnu.org/enigma/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libpng-devel
 BuildRequires:	lua-devel
