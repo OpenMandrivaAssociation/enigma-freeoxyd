@@ -12,6 +12,11 @@ License:	GPLv2+
 Group:		Games/Arcade
 URL:		https://www.nongnu.org/enigma/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libpng-devel
 BuildRequires:	lua-devel
 BuildRequires:	libSDL-devel
